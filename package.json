@@ -62,7 +62,10 @@
         "dev": "node scripts/dev.js"
     },
     "eslintConfig": {
-        "extends": "react-app"
+        "extends": "react-app",
+        "globals": {
+            "chrome": true
+        }
     },
     "browserslist": [
         ">0.2%",
