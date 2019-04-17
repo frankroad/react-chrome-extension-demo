@@ -27,8 +27,10 @@ const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
 const printHostingInstructions = require('react-dev-utils/printHostingInstructions')
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter')
 const printBuildError = require('react-dev-utils/printBuildError')
-const cheerio = require('cheerio')
 
+const moveInlineScript = require('./moveInlineScript')
+
+console.log(moveInlineScript)
 const measureFileSizesBeforeBuild =
     FileSizeReporter.measureFileSizesBeforeBuild
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild
@@ -138,27 +140,7 @@ async function build(previousFileSizes) {
             console.log('watch ok')
             // 将webpack打包的inlineScript 打包成单独文件
             if ( compiler.outputPath ) {
-                fs.readdir(compiler.outputPath)
-                  .then(files => files.filter(file => /\.html$/.test(file)))
-                  .then(files => files.forEach(file => {
-                          fs.readFile(path.resolve(compiler.outputPath, file), 'utf8')
-                            .then(data => {
-                                let $ = cheerio.load(data)
-                                let container = $('script:not([src])')
-                                let inlineScript = container.html()
-                                let newFileName = `${file}_webpack_module`
-                                let relativeSrc = (compiler.options.output.publicPath || '') + compiler.options.output.filename.replace('[name]', newFileName)
-
-                                fs.outputFile(path.resolve(compiler.outputPath, relativeSrc), inlineScript)
-                                  .catch(err => console.log(err))
-
-                                container.replaceWith(`<script src="${relativeSrc}"></script>`)
-
-                                fs.outputFile(path.resolve(compiler.outputPath, file), $.html())
-                                  .catch(err => console.log(err))
-                            })
-                      })
-                  )
+                moveInlineScript(compiler)
             }
         })
     })
