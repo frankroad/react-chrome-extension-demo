@@ -1,17 +1,13 @@
 {
-    "short_name": "react-chrome-extension-demo",
     "name": "react-chrome-extension-demo",
-    "icons": [
-        {
-            "src": "favicon.ico",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-        }
-    ],
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
     "version": "1.0",
-    "manifest_version": 2
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "react-chrome-extension-demo",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": ["storage", "contextMenus"]
 }
