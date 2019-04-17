@@ -6,6 +6,11 @@
         "default_title": "react-chrome-extension-demo",
         "default_popup": "popup.html"
     },
+    "icons": {
+        "16": "./static/img/icon.png",
+        "48": "./static/img/icon.png",
+        "128": "./static/img/icon.png"
+    },
     "background": {
         "page": "background.html"
     },
