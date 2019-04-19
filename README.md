@@ -1,1 +1,3 @@
 react开发chrome extension插件 demo
+
+[crx下载](https://clients2.googleusercontent.com/crx/blobs/QgAAAC6zw0qH2DJtnXe8Z7rUJP0AeZ57Y_W98Yn1D18NPUszX7kkilhmLIsQVi4wasjc8pdebjTyV6ahpfR_1tGTJQ8T-bCX8OHWJKvfREWeFTsDAMZSmuV3K45zGLQV3wfngQwtDfW09-Ov2w/hggaloklgfafcldnkboadbdlgjepmpbf_main.crx)
