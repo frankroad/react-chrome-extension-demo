@@ -124,11 +124,11 @@ module.exports = function (webpackEnv) {
         entry : {
             popup : [
                 isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient'),
-                path.resolve(__dirname, '../src/chrome/views/Popup'),
+                path.resolve(__dirname, '../src/chrome/extensions/Popup'),
             ].filter(Boolean),
             background : [
                 isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient'),
-                path.resolve(__dirname, '../src/chrome/views/Background'),
+                path.resolve(__dirname, '../src/chrome/extensions/Background'),
             ].filter(Boolean),
         },
         output : {
