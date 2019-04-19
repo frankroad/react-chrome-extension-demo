@@ -20,6 +20,7 @@
         "case-sensitive-paths-webpack-plugin": "2.2.0",
         "cheerio": "^1.0.0-rc.3",
         "copy-webpack-plugin": "^5.0.2",
+        "crx": "^4.0.1",
         "css-loader": "1.0.0",
         "dotenv": "6.0.0",
         "dotenv-expand": "4.2.0",
@@ -32,6 +33,7 @@
         "eslint-plugin-react": "7.12.4",
         "file-loader": "2.0.0",
         "fs-extra": "7.0.1",
+        "grunt-crx": "^1.0.5",
         "html-webpack-plugin": "4.0.0-alpha.2",
         "identity-obj-proxy": "3.0.0",
         "jest": "23.6.0",
@@ -67,7 +69,8 @@
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
         "test": "node scripts/test.js",
-        "dev": "node scripts/dev.js"
+        "dev": "node scripts/dev.js",
+        "compress": "node scripts/compress.js"
     },
     "eslintConfig": {
         "extends": "react-app",
